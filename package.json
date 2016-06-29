@@ -1,7 +1,7 @@
 {
   "name": "state",
   "version": "0.0.1",
-  "description": "",
+  "description": "提供状态管理功能的基类，可用于限定子类某些方法在特定的状态下才能执行。",
   "scripts": {
     "test": "karma start"
   },
