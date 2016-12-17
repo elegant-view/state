@@ -7,6 +7,11 @@ const STATE = Symbol('state');
 
 export default class State {
 
+    /**
+     * constructor
+     *
+     * @public
+     */
     constructor() {
         this[STATE] = {};
     }
@@ -15,7 +20,7 @@ export default class State {
      * 添加状态
      *
      * @public
-     * @param {string} state 状态字符串
+     * @param {string|Symbol} state 状态字符串或者Symbol对象
      */
     addState(state) {
         this[STATE][state] = true;
@@ -25,7 +30,7 @@ export default class State {
      * 判断当前是否具有state状态
      *
      * @public
-     * @param  {string}  state 状态字符串
+     * @param  {string|Symbol}  state 状态字符串或者Symbol对象
      * @return {boolean}
      */
     hasState(state) {
@@ -36,7 +41,7 @@ export default class State {
      * 移除状态
      *
      * @public
-     * @param  {string} state 状态字符串
+     * @param  {string|Symbol} state 状态字符串或者Symbol对象
      */
     removeState(state) {
         this[STATE][state] = false;
@@ -58,7 +63,8 @@ export default class State {
  * @param {Array.<string>} stateConditions 一组state条件，示例如下：
  *                                            [
  *                                            	['not', 'destroied'], // 表明不具备destroied状态
- *                                            	['has', 'destroied'] // 表明具备destroied状态
+ *                                            	['has', 'destroied'], // 表明具备destroied状态
+ *                                              ['has', Symbol()]
  *                                            ]
  * @param {boolean} shouldThrowError 在不满足条件的情况下，是否应该抛出异常
  * @return {Function}

@@ -23,10 +23,6 @@ module.exports = function(config) {
             {
                 pattern: 'test/**/*Spec.js',
                 included: false
-            },
-            {
-                pattern: 'test/**/*Spec.js',
-                included: false
             }
         ],
 
